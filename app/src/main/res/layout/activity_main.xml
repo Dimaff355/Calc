@@ -1,288 +1,295 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <Button
-        android:id="@+id/button_7"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_button"
-        android:text="7"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/button_4"
-        app:layout_constraintStart_toStartOf="parent" />
+    <data>
 
-    <Button
-        android:id="@+id/buttonReset"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_fun_buts"
-        android:text="С"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/buttonPlus"
-        app:layout_constraintStart_toStartOf="parent" />
+    </data>
 
-    <Button
-        android:id="@+id/buttonDelete"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:background="@android:color/holo_orange_dark"
-        android:text="<---"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/buttonPlus"
-        app:layout_constraintEnd_toEndOf="@+id/buttonPercent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/buttonPlus"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_fun_buts"
-        android:text="+"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/button_7"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/button_7"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_button"
+            android:text="7"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/button_4"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/buttonMultiply"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_fun_buts"
-        android:text="x"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/button_7"
-        app:layout_constraintStart_toEndOf="@+id/buttonDivide" />
+        <Button
+            android:id="@+id/buttonReset"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_fun_buts"
+            android:text="С"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/buttonPlus"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/buttonPercent"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_fun_buts"
-        android:text="%"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/button_7"
-        app:layout_constraintStart_toEndOf="@+id/buttonMultiply" />
+        <Button
+            android:id="@+id/buttonDelete"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@android:color/holo_orange_dark"
+            android:text="<---"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/buttonPlus"
+            app:layout_constraintEnd_toEndOf="@+id/buttonPercent" />
 
-    <Button
-        android:id="@+id/buttonMinus"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_fun_buts"
-        android:text="-"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/button_7"
-        app:layout_constraintStart_toEndOf="@+id/buttonPlus" />
+        <Button
+            android:id="@+id/buttonPlus"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_fun_buts"
+            android:text="+"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/button_7"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/buttonDivide"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_fun_buts"
-        android:text=":"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/button_7"
-        app:layout_constraintStart_toEndOf="@+id/buttonMinus" />
+        <Button
+            android:id="@+id/buttonMultiply"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_fun_buts"
+            android:text="x"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/button_7"
+            app:layout_constraintStart_toEndOf="@+id/buttonDivide" />
 
-    <Button
-        android:id="@+id/button_9"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_button"
-        android:text="9"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/button_4"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <Button
+            android:id="@+id/buttonPercent"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_fun_buts"
+            android:text="%"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/button_7"
+            app:layout_constraintStart_toEndOf="@+id/buttonMultiply" />
 
-    <Button
-        android:id="@+id/button_8"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_button"
-        android:text="8"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/button_4"
-        app:layout_constraintEnd_toStartOf="@+id/button_9"
-        app:layout_constraintStart_toEndOf="@+id/button_7" />
+        <Button
+            android:id="@+id/buttonMinus"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_fun_buts"
+            android:text="-"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/button_7"
+            app:layout_constraintStart_toEndOf="@+id/buttonPlus" />
 
-    <Button
-        android:id="@+id/button_4"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_button"
-        android:text="4"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/button_1"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/buttonDivide"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_fun_buts"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/button_7"
+            app:layout_constraintStart_toEndOf="@+id/buttonMinus" />
 
-    <Button
-        android:id="@+id/button_5"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_button"
-        android:text="5"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/button_1"
-        app:layout_constraintEnd_toStartOf="@+id/button_6"
-        app:layout_constraintStart_toEndOf="@+id/button_4" />
+        <Button
+            android:id="@+id/button_9"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_button"
+            android:text="9"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/button_4"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/button_6"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_button"
-        android:text="6"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/button_1"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <Button
+            android:id="@+id/button_8"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_button"
+            android:text="8"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/button_4"
+            app:layout_constraintEnd_toStartOf="@+id/button_9"
+            app:layout_constraintStart_toEndOf="@+id/button_7" />
 
-    <Button
-        android:id="@+id/buttonEquals"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="100dp"
-        android:background="@drawable/my_gradient_equals"
-        android:text="="
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <Button
+            android:id="@+id/button_4"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_button"
+            android:text="4"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/button_1"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button_0"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="100dp"
-        android:background="@drawable/my_gradient_button"
-        android:text="0"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/button_5"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_button"
+            android:text="5"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/button_1"
+            app:layout_constraintEnd_toStartOf="@+id/button_6"
+            app:layout_constraintStart_toEndOf="@+id/button_4" />
 
-    <Button
-        android:id="@+id/button_1"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_button"
-        android:text="1"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/button_0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/button_6"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_button"
+            android:text="6"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/button_1"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/button_3"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_button"
-        android:text="3"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/button_0"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <Button
+            android:id="@+id/buttonEquals"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/my_gradient_equals"
+            android:text="="
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/button_2"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/my_gradient_button"
-        android:text="2"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/button_0"
-        app:layout_constraintEnd_toStartOf="@+id/button_3"
-        app:layout_constraintStart_toEndOf="@+id/button_1" />
+        <Button
+            android:id="@+id/button_0"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/my_gradient_button"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/buttonDot"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:background="@drawable/my_gradient_button"
-        android:text="."
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTintMode="add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonEquals"
-        app:layout_constraintStart_toEndOf="@+id/button_0" />
+        <Button
+            android:id="@+id/button_1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_button"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/button_0"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="56dp"
-        android:hint="1234567890"
-        android:textColor="@color/black"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonReset"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/button_3"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_button"
+            android:text="3"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/button_0"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/button_2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/my_gradient_button"
+            android:text="2"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toTopOf="@+id/button_0"
+            app:layout_constraintEnd_toStartOf="@+id/button_3"
+            app:layout_constraintStart_toEndOf="@+id/button_1" />
+
+        <Button
+            android:id="@+id/buttonDot"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/my_gradient_button"
+            android:text="."
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:backgroundTintMode="add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonEquals"
+            app:layout_constraintStart_toEndOf="@+id/button_0" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="56dp"
+            android:hint="1234567890"
+            android:textColor="@color/black"
+            android:textSize="48sp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonReset"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
