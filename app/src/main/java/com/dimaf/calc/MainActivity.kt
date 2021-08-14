@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
             val button_0 = button0
             val buttonDelete = buttonDelete
             val buttonReset = buttonReset
+            val buttonPlus = buttonPlus
+            val buttomEquals = buttonEquals
 
             button_0.setOnClickListener {
                 commandsHelper.onClickBut0()
@@ -40,6 +42,8 @@ class MainActivity : AppCompatActivity() {
             button_9.setOnClickListener { tv.text = commandsHelper.onClickBut9() }
             buttonDelete.setOnClickListener { tv.text = commandsHelper.onClickDelete() }
             buttonReset.setOnClickListener { tv.text = commandsHelper.onClickReset() }
+            buttonPlus.setOnClickListener { tv.text = commandsHelper.onClickPlus() }
+            buttonEquals.setOnClickListener { tv.text = commandsHelper.onClickEquals() }
 
         }
 

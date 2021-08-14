@@ -284,7 +284,6 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="56dp"
-            android:hint="1234567890"
             android:textColor="@color/black"
             android:textSize="48sp"
             app:layout_constraintBottom_toTopOf="@+id/buttonReset"
