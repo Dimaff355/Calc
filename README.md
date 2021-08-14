@@ -5,4 +5,4 @@
 
 Пока калькулятор ещё не работает полноценно и дизайн оставляет желать лучшего. Но постепенно всё заработает.
 
-![image](https://user-images.githubusercontent.com/59067552/129444365-634dcd0c-b8eb-4139-a5c5-d5d4cd4079e7.png)
+![calc](https://user-images.githubusercontent.com/59067552/129444425-827c99d6-89f0-4e00-ac6e-236214ce183b.png)
