@@ -1,6 +1,6 @@
 package com.dimaf.calc
 
-import android.util.Log
+import android.widget.Toast
 import java.math.BigDecimal
 
 class CommandsHelper {
@@ -55,7 +55,10 @@ class CommandsHelper {
         when (command) {
             1,2,3,4,5,6,7,8,9,0 -> text+=command
             Consts.DELETE -> text = text.dropLast(1)
-            Consts.RESET -> text = "0"
+            Consts.RESET -> {
+                text = "0"
+                tempOperation = Consts.DEFAULT_OPERATION
+            }
             Consts.DOT -> text+="."
         }
         // это потом надо убрать, типа чтоб не было "0" в начеле перед числом
@@ -70,7 +73,12 @@ class CommandsHelper {
             return when (operation) {
                 Consts.PLUS ->  tempNumber + currentNumber
                 Consts.MINUS -> tempNumber - currentNumber
-                Consts.DIVIDE -> tempNumber / currentNumber
+                Consts.DIVIDE -> if (currentNumber != BigDecimal(0)) {
+                    return tempNumber / currentNumber
+                } else {
+                    tvText(Consts.RESET)
+                    return BigDecimal(0)
+                }
                 Consts.MULTIPLY -> tempNumber * currentNumber
                 else -> BigDecimal(0)
             }
