@@ -286,7 +286,7 @@
             android:background="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/buttonPercent"
             app:layout_constraintEnd_toEndOf="@+id/buttonPercent"
-            app:srcCompat="@drawable/backupPreviewnewRed" />
+            app:srcCompat="@drawable/delete_red" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
