@@ -10,4 +10,5 @@ object Consts {
     const val MULTIPLY = 500
     const val DEFAULT_OPERATION = 600
     const val DOT = 700
+    const val PERCENT = 800
 }

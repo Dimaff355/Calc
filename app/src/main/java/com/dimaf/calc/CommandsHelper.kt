@@ -1,5 +1,7 @@
 package com.dimaf.calc
 
+import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import java.math.BigDecimal
 
@@ -9,7 +11,7 @@ class CommandsHelper {
     var text = "0"
     // промежуточный результат (или конечный, по ситуации)
     var result : BigDecimal = BigDecimal(0)
-    // здесь память на 2 посл числа (tempNumber1 - самое первое, tempNumber2 - после него)
+    // здесь память на посл число
     var tempNumber2 : BigDecimal = BigDecimal(0)
 
     var tempOperation = Consts.DEFAULT_OPERATION
@@ -30,7 +32,7 @@ class CommandsHelper {
 
 
 
-    fun onClickOperation(operation: Int) : String {
+    fun onClickOperation(operation: Int, context : Context) : String {
         if (tempOperation == Consts.DEFAULT_OPERATION) {
             tempOperation = operation
             result = text.toBigDecimal()
@@ -38,15 +40,15 @@ class CommandsHelper {
             return result.toString()
         }
         tempNumber2 = text.toBigDecimal()
-        calculate(result, tempNumber2, tempOperation)
+        calculate(result, tempNumber2, tempOperation, context)
         tempOperation = operation
         text = "0"
         return result.toString()
     }
 
     // для "равно"
-    fun onClickEquals() : String {
-        result = calculate(result, text.toBigDecimal(), tempOperation)
+    fun onClickEquals(context: Context) : String {
+        result = calculate(result, text.toBigDecimal(), tempOperation, context)
         return result.toString()
     }
 
@@ -68,7 +70,7 @@ class CommandsHelper {
         return text
     }
 
-    fun calculate (tempNumber : BigDecimal, currentNumber : BigDecimal, operation : Int) : BigDecimal {
+    fun calculate (tempNumber : BigDecimal, currentNumber : BigDecimal, operation : Int, context : Context) : BigDecimal {
         if (tempOperation != Consts.DEFAULT_OPERATION) {
             return when (operation) {
                 Consts.PLUS ->  tempNumber + currentNumber
@@ -76,6 +78,7 @@ class CommandsHelper {
                 Consts.DIVIDE -> if (currentNumber != BigDecimal(0)) {
                     return tempNumber / currentNumber
                 } else {
+                    Toast.makeText(context, "На ноль делить нельзя!", Toast.LENGTH_LONG).show()
                     tvText(Consts.RESET)
                     return BigDecimal(0)
                 }

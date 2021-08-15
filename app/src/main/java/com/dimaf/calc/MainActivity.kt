@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             val buttonDivide = buttonDivide
             val buttonMultiply = buttonMultiply
             val buttonDot = buttonDot
+            val buttonPercent = buttonPercent
 
             button_0.setOnClickListener { tv.text = commandsHelper.onClickButNumber(0) }
             button_1.setOnClickListener { tv.text = commandsHelper.onClickButNumber(1) }
@@ -45,11 +46,12 @@ class MainActivity : AppCompatActivity() {
             buttonDot.setOnClickListener { tv.text = commandsHelper.onClickButNumber(Consts.DOT) }
             buttonDelete.setOnClickListener { tv.text = commandsHelper.onClickDelete() }
             buttonReset.setOnClickListener { tv.text = commandsHelper.onClickReset() }
-            buttonPlus.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.PLUS) }
-            buttonEquals.setOnClickListener { tv.text = commandsHelper.onClickEquals() }
-            buttonMinus.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.MINUS) }
-            buttonDivide.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.DIVIDE) }
-            buttonMultiply.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.MULTIPLY) }
+            buttonPlus.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.PLUS, this@MainActivity) }
+            buttonEquals.setOnClickListener { tv.text = commandsHelper.onClickEquals(this@MainActivity) }
+            buttonMinus.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.MINUS, this@MainActivity) }
+            buttonDivide.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.DIVIDE, this@MainActivity) }
+            buttonMultiply.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.MULTIPLY, this@MainActivity) }
+            //buttonPercent.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.PERCENT) }
 
         }
 
