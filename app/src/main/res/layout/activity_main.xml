@@ -14,7 +14,7 @@
 
         <Button
             android:id="@+id/button7"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginBottom="32dp"
@@ -29,10 +29,10 @@
         <Button
             android:id="@+id/buttonReset"
             android:layout_width="130dp"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:layout_marginStart="32dp"
             android:layout_marginBottom="32dp"
-            android:background="@drawable/my_gradient_fun_buts"
+            android:background="@android:color/holo_orange_light"
             android:text="С"
             android:textColor="@color/black"
             android:textSize="24sp"
@@ -41,23 +41,9 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/buttonDelete"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:background="@android:color/holo_orange_dark"
-            android:text="УБРАТЬ"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:backgroundTintMode="add"
-            app:layout_constraintBottom_toTopOf="@+id/buttonPlus"
-            app:layout_constraintEnd_toEndOf="@+id/buttonPercent" />
-
-        <Button
             android:id="@+id/buttonPlus"
-            android:layout_width="50dp"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
             android:layout_marginBottom="32dp"
             android:background="@drawable/my_gradient_fun_buts"
             android:text="+"
@@ -65,11 +51,11 @@
             android:textSize="24sp"
             app:backgroundTintMode="add"
             app:layout_constraintBottom_toTopOf="@+id/button7"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/button7" />
 
         <Button
             android:id="@+id/buttonMultiply"
-            android:layout_width="50dp"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="32dp"
@@ -83,7 +69,7 @@
 
         <Button
             android:id="@+id/buttonPercent"
-            android:layout_width="50dp"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="32dp"
@@ -93,11 +79,12 @@
             android:textSize="24sp"
             app:backgroundTintMode="add"
             app:layout_constraintBottom_toTopOf="@+id/button7"
+            app:layout_constraintEnd_toEndOf="@+id/button9"
             app:layout_constraintStart_toEndOf="@+id/buttonMultiply" />
 
         <Button
             android:id="@+id/buttonMinus"
-            android:layout_width="50dp"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="32dp"
@@ -111,7 +98,7 @@
 
         <Button
             android:id="@+id/buttonDivide"
-            android:layout_width="50dp"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="32dp"
@@ -125,7 +112,7 @@
 
         <Button
             android:id="@+id/button9"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
@@ -139,7 +126,7 @@
 
         <Button
             android:id="@+id/button8"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             android:background="@drawable/my_gradient_button"
@@ -153,7 +140,7 @@
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginBottom="32dp"
@@ -167,7 +154,7 @@
 
         <Button
             android:id="@+id/button5"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             android:background="@drawable/my_gradient_button"
@@ -181,7 +168,7 @@
 
         <Button
             android:id="@+id/button6"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
@@ -195,7 +182,7 @@
 
         <Button
             android:id="@+id/buttonEquals"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="100dp"
@@ -209,7 +196,7 @@
 
         <Button
             android:id="@+id/button0"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginBottom="100dp"
@@ -223,7 +210,7 @@
 
         <Button
             android:id="@+id/button1"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginBottom="32dp"
@@ -237,7 +224,7 @@
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
@@ -251,7 +238,7 @@
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             android:background="@drawable/my_gradient_button"
@@ -265,7 +252,7 @@
 
         <Button
             android:id="@+id/buttonDot"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="100dp"
             android:background="@drawable/my_gradient_button"
@@ -290,5 +277,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/buttonDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/buttonPercent"
+            app:layout_constraintEnd_toEndOf="@+id/buttonPercent"
+            app:srcCompat="@drawable/backupPreviewnewRed" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

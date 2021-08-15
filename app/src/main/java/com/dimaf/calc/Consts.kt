@@ -9,6 +9,4 @@ object Consts {
     const val DIVIDE = 400
     const val MULTIPLY = 500
     const val DEFAULT_OPERATION = 600
-    const val SHOW_TEMP_VALUE = 700
-    const val AFTER_EQUALS = 800
 }
