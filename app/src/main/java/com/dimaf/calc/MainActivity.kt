@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             val buttonMinus = buttonMinus
             val buttonDivide = buttonDivide
             val buttonMultiply = buttonMultiply
+            val buttonDot = buttonDot
 
             button_0.setOnClickListener { tv.text = commandsHelper.onClickButNumber(0) }
             button_1.setOnClickListener { tv.text = commandsHelper.onClickButNumber(1) }
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
             button_7.setOnClickListener { tv.text = commandsHelper.onClickButNumber(7) }
             button_8.setOnClickListener { tv.text = commandsHelper.onClickButNumber(8) }
             button_9.setOnClickListener { tv.text = commandsHelper.onClickButNumber(9) }
+            buttonDot.setOnClickListener { tv.text = commandsHelper.onClickButNumber(Consts.DOT) }
             buttonDelete.setOnClickListener { tv.text = commandsHelper.onClickDelete() }
             buttonReset.setOnClickListener { tv.text = commandsHelper.onClickReset() }
             buttonPlus.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.PLUS) }

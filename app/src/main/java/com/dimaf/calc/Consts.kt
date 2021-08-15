@@ -9,4 +9,5 @@ object Consts {
     const val DIVIDE = 400
     const val MULTIPLY = 500
     const val DEFAULT_OPERATION = 600
+    const val DOT = 700
 }
