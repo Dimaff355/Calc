@@ -15,4 +15,5 @@ TODO:
 - поменять дизайн кнопки "УБРАТЬ" на значок
 - изменить общий дизайн и размеры элементов
 
-![calc](https://user-images.githubusercontent.com/59067552/129444425-827c99d6-89f0-4e00-ac6e-236214ce183b.png)
+![scr](https://user-images.githubusercontent.com/59067552/129471271-75975962-3654-4d4e-b837-e24797fa8a09.png)
+
