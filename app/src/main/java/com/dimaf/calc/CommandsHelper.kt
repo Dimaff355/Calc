@@ -2,10 +2,13 @@ package com.dimaf.calc
 
 import android.content.Context
 import android.util.Log
+import android.view.MotionEvent
+import android.view.View
 import android.widget.Toast
 import java.math.BigDecimal
 
-class CommandsHelper {
+class CommandsHelper (act : MainActivity) {
+    val act = act
 
     // отвечает только за текст в табло
     var text = "0"
@@ -16,7 +19,8 @@ class CommandsHelper {
 
     var tempOperation = Consts.DEFAULT_OPERATION
 
-    fun onClickButNumber (command: Int) : String  {
+    fun onClickButNumber (command: Int, view: View) : String  {
+        buttonColorOnclick(view, R.drawable.my_gradient_button)
         return tvText(command)
     }
 
@@ -32,7 +36,8 @@ class CommandsHelper {
 
 
 
-    fun onClickOperation(operation: Int, context : Context) : String {
+    fun onClickOperation(operation: Int, view: View) : String {
+        buttonColorOnclick(view, R.drawable.my_gradient_fun_buts)
         if (tempOperation == Consts.DEFAULT_OPERATION) {
             tempOperation = operation
             result = text.toBigDecimal()
@@ -40,15 +45,16 @@ class CommandsHelper {
             return result.toString()
         }
         tempNumber2 = text.toBigDecimal()
-        calculate(result, tempNumber2, tempOperation, context)
+        calculate(result, tempNumber2, tempOperation)
         tempOperation = operation
         text = "0"
         return result.toString()
     }
 
     // для "равно"
-    fun onClickEquals(context: Context) : String {
-        result = calculate(result, text.toBigDecimal(), tempOperation, context)
+    fun onClickEquals(view: View) : String {
+        buttonColorOnclick(view, R.drawable.my_gradient_equals)
+        result = calculate(result, text.toBigDecimal(), tempOperation)
         return result.toString()
     }
 
@@ -70,7 +76,7 @@ class CommandsHelper {
         return text
     }
 
-    fun calculate (tempNumber : BigDecimal, currentNumber : BigDecimal, operation : Int, context : Context) : BigDecimal {
+    fun calculate (tempNumber : BigDecimal, currentNumber : BigDecimal, operation : Int) : BigDecimal {
         if (tempOperation != Consts.DEFAULT_OPERATION) {
             return when (operation) {
                 Consts.PLUS ->  tempNumber + currentNumber
@@ -78,7 +84,7 @@ class CommandsHelper {
                 Consts.DIVIDE -> if (currentNumber != BigDecimal(0)) {
                     return tempNumber / currentNumber
                 } else {
-                    Toast.makeText(context, "На ноль делить нельзя!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(act, "На ноль делить нельзя!", Toast.LENGTH_LONG).show()
                     tvText(Consts.RESET)
                     return BigDecimal(0)
                 }
@@ -86,6 +92,18 @@ class CommandsHelper {
                 else -> BigDecimal(0)
             }
         } else {return  BigDecimal(0)}
+    }
+
+    fun buttonColorOnclick(view: View, color : Int) {
+        view.setOnTouchListener (object : View.OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                when (event?.action) {
+                    MotionEvent.ACTION_DOWN -> v?.setBackgroundResource(R.color.black)
+                    MotionEvent.ACTION_UP -> v?.setBackgroundResource(color)
+                }
+                return v?.onTouchEvent(event) ?: true
+            }
+        })
     }
 
 
