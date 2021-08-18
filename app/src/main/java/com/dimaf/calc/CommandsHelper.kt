@@ -20,7 +20,7 @@ class CommandsHelper (act : MainActivity) {
     var tempOperation = Consts.DEFAULT_OPERATION
 
     fun onClickButNumber (command: Int, view: View) : String  {
-        buttonColorOnclick(view, R.drawable.my_gradient_button)
+
         return tvText(command)
     }
 
@@ -37,7 +37,6 @@ class CommandsHelper (act : MainActivity) {
 
 
     fun onClickOperation(operation: Int, view: View) : String {
-        buttonColorOnclick(view, R.drawable.my_gradient_fun_buts)
         if (tempOperation == Consts.DEFAULT_OPERATION) {
             tempOperation = operation
             result = text.toBigDecimal()
@@ -53,7 +52,6 @@ class CommandsHelper (act : MainActivity) {
 
     // для "равно"
     fun onClickEquals(view: View) : String {
-        buttonColorOnclick(view, R.drawable.my_gradient_equals)
         result = calculate(result, text.toBigDecimal(), tempOperation)
         return result.toString()
     }
@@ -94,17 +92,8 @@ class CommandsHelper (act : MainActivity) {
         } else {return  BigDecimal(0)}
     }
 
-    fun buttonColorOnclick(view: View, color : Int) {
-        view.setOnTouchListener (object : View.OnTouchListener {
-            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-                when (event?.action) {
-                    MotionEvent.ACTION_DOWN -> v?.setBackgroundResource(R.color.black)
-                    MotionEvent.ACTION_UP -> v?.setBackgroundResource(color)
-                }
-                return v?.onTouchEvent(event) ?: true
-            }
-        })
-    }
+
+
 
 
 

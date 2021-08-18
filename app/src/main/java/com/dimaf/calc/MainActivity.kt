@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity() {
             val buttonPercent = buttonPercent
 
             button_0.setOnClickListener { tv.text = commandsHelper.onClickButNumber(0, it) }
+
+
             button_1.setOnClickListener { tv.text = commandsHelper.onClickButNumber(1, it) }
             button_2.setOnClickListener { tv.text = commandsHelper.onClickButNumber(2, it) }
             button_3.setOnClickListener { tv.text = commandsHelper.onClickButNumber(3, it) }
