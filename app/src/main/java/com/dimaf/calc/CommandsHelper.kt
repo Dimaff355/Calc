@@ -74,22 +74,43 @@ class CommandsHelper (act : MainActivity) {
         return text
     }
 
-    fun calculate (tempNumber : BigDecimal, currentNumber : BigDecimal, operation : Int) : BigDecimal {
+    fun calculate (numberLast : BigDecimal, currentNum : BigDecimal, operation : Int) : BigDecimal {
+        val tempNumber = normalNumber(numberLast)
+        val currentNumber = normalNumber(currentNum)
         if (tempOperation != Consts.DEFAULT_OPERATION) {
             return when (operation) {
-                Consts.PLUS ->  tempNumber + currentNumber
-                Consts.MINUS -> tempNumber - currentNumber
+                Consts.PLUS -> roundNumber(tempNumber + currentNumber)
+                Consts.MINUS -> roundNumber(tempNumber - currentNumber)
                 Consts.DIVIDE -> if (currentNumber != BigDecimal(0)) {
-                    return tempNumber / currentNumber
+                    return roundNumber(tempNumber / currentNumber)
                 } else {
                     Toast.makeText(act, "На ноль делить нельзя!", Toast.LENGTH_LONG).show()
                     tvText(Consts.RESET)
                     return BigDecimal(0)
                 }
-                Consts.MULTIPLY -> tempNumber * currentNumber
+                Consts.MULTIPLY -> roundNumber(tempNumber * currentNumber)
                 else -> BigDecimal(0)
             }
         } else {return  BigDecimal(0)}
+    }
+
+    fun normalNumber(number: BigDecimal) : BigDecimal {
+        if (number.toString().contains('.')) {
+            return number
+        }
+        else {
+            val numberAfterNormalization = (number.toString() + ".0").toBigDecimal()
+            return numberAfterNormalization
+        }
+    }
+
+    fun roundNumber(number: BigDecimal) : BigDecimal {
+        if (number.toString().endsWith(".0") || number.toString().endsWith(".00") ) {
+            return number.toInt().toBigDecimal()
+        }
+        else {
+            return number
+        }
     }
 
 
