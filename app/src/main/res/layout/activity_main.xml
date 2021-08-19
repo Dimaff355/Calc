@@ -293,7 +293,7 @@
             android:background="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/buttonPercent"
             app:layout_constraintEnd_toEndOf="@+id/buttonPercent"
-            app:srcCompat="@drawable/delete_red" />
+            app:srcCompat="@drawable/selector_for_button_delete" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

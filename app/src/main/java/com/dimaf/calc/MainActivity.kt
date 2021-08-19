@@ -50,6 +50,11 @@ class MainActivity : AppCompatActivity() {
             button_9.setOnClickListener { tv.text = commandsHelper.onClickButNumber(9, it) }
             buttonDot.setOnClickListener { tv.text = commandsHelper.onClickButNumber(Consts.DOT, it) }
             buttonDelete.setOnClickListener { tv.text = commandsHelper.onClickDelete() }
+            buttonDelete.setOnLongClickListener {
+                tv.text = ""
+                commandsHelper.text = "0"
+                return@setOnLongClickListener true
+            }
             buttonReset.setOnClickListener { tv.text = commandsHelper.onClickReset() }
             buttonPlus.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.PLUS, it) }
             buttonEquals.setOnClickListener { tv.text = commandsHelper.onClickEquals(it) }
