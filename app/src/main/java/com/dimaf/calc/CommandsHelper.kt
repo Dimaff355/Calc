@@ -47,6 +47,9 @@ class CommandsHelper (act : MainActivity) {
 
     // для "равно"
     fun onClickEquals() : String {
+        if (tempOperation == Consts.DEFAULT_OPERATION) {
+            return text
+        }
         result = calculate(result, text.toBigDecimal(), tempOperation)
         return result.toString()
     }
@@ -76,9 +79,9 @@ class CommandsHelper (act : MainActivity) {
             return when (operation) {
                 Consts.PLUS -> roundNumber(tempNum + currentNumber)
                 Consts.MINUS -> roundNumber(tempNum - currentNumber)
-                Consts.DIVIDE -> if (currentNumber != BigDecimal(0)) {
+                Consts.DIVIDE -> try {
                     return roundNumber(tempNum / currentNumber)
-                } else {
+                } catch (e : ArithmeticException) {
                     Toast.makeText(act, "На ноль делить нельзя!", Toast.LENGTH_LONG).show()
                     tvText(Consts.RESET)
                     return BigDecimal(0)
