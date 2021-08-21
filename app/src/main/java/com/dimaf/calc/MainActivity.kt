@@ -1,10 +1,11 @@
 package com.dimaf.calc
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MotionEvent
+import android.util.Log
 import android.view.View
+import androidx.core.widget.addTextChangedListener
+import androidx.core.widget.doAfterTextChanged
 import com.dimaf.calc.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -60,6 +61,10 @@ class MainActivity : AppCompatActivity() {
             buttonDivide.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.DIVIDE) }
             buttonMultiply.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.MULTIPLY) }
             buttonPercent.setOnClickListener { tv.text = commandsHelper.percent() }
+
+            tv.doAfterTextChanged {
+                scrollView.smoothScrollTo(0, 100000)
+            }
 
         }
 
