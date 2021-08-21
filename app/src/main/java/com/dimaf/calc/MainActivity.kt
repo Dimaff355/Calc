@@ -36,19 +36,17 @@ class MainActivity : AppCompatActivity() {
             val buttonDot = buttonDot
             val buttonPercent = buttonPercent
 
-            button_0.setOnClickListener { tv.text = commandsHelper.onClickButNumber(0, it) }
-
-
-            button_1.setOnClickListener { tv.text = commandsHelper.onClickButNumber(1, it) }
-            button_2.setOnClickListener { tv.text = commandsHelper.onClickButNumber(2, it) }
-            button_3.setOnClickListener { tv.text = commandsHelper.onClickButNumber(3, it) }
-            button_4.setOnClickListener { tv.text = commandsHelper.onClickButNumber(4, it) }
-            button_5.setOnClickListener { tv.text = commandsHelper.onClickButNumber(5, it) }
-            button_6.setOnClickListener { tv.text = commandsHelper.onClickButNumber(6, it) }
-            button_7.setOnClickListener { tv.text = commandsHelper.onClickButNumber(7, it) }
-            button_8.setOnClickListener { tv.text = commandsHelper.onClickButNumber(8, it) }
-            button_9.setOnClickListener { tv.text = commandsHelper.onClickButNumber(9, it) }
-            buttonDot.setOnClickListener { tv.text = commandsHelper.onClickButNumber(Consts.DOT, it) }
+            button_0.setOnClickListener { tv.text = commandsHelper.onClickButNumber(0) }
+            button_1.setOnClickListener { tv.text = commandsHelper.onClickButNumber(1) }
+            button_2.setOnClickListener { tv.text = commandsHelper.onClickButNumber(2) }
+            button_3.setOnClickListener { tv.text = commandsHelper.onClickButNumber(3) }
+            button_4.setOnClickListener { tv.text = commandsHelper.onClickButNumber(4) }
+            button_5.setOnClickListener { tv.text = commandsHelper.onClickButNumber(5) }
+            button_6.setOnClickListener { tv.text = commandsHelper.onClickButNumber(6) }
+            button_7.setOnClickListener { tv.text = commandsHelper.onClickButNumber(7) }
+            button_8.setOnClickListener { tv.text = commandsHelper.onClickButNumber(8) }
+            button_9.setOnClickListener { tv.text = commandsHelper.onClickButNumber(9) }
+            buttonDot.setOnClickListener { tv.text = commandsHelper.onClickButNumber(Consts.DOT) }
             buttonDelete.setOnClickListener { tv.text = commandsHelper.onClickDelete() }
             buttonDelete.setOnLongClickListener {
                 tv.text = ""
@@ -56,12 +54,12 @@ class MainActivity : AppCompatActivity() {
                 return@setOnLongClickListener true
             }
             buttonReset.setOnClickListener { tv.text = commandsHelper.onClickReset() }
-            buttonPlus.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.PLUS, it) }
-            buttonEquals.setOnClickListener { tv.text = commandsHelper.onClickEquals(it) }
-            buttonMinus.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.MINUS, it ) }
-            buttonDivide.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.DIVIDE, it) }
-            buttonMultiply.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.MULTIPLY, it) }
-            //buttonPercent.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.PERCENT) }
+            buttonPlus.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.PLUS) }
+            buttonEquals.setOnClickListener { tv.text = commandsHelper.onClickEquals() }
+            buttonMinus.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.MINUS ) }
+            buttonDivide.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.DIVIDE) }
+            buttonMultiply.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.MULTIPLY) }
+            buttonPercent.setOnClickListener { tv.text = commandsHelper.percent() }
 
         }
 
