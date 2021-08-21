@@ -35,6 +35,7 @@
 
 TODO:
 - автопрокрутка в ScrollView
+- разделитель тысяч, миллионов и т. д. через пробел
 
 
 ![scr](https://user-images.githubusercontent.com/59067552/129471271-75975962-3654-4d4e-b837-e24797fa8a09.png)
