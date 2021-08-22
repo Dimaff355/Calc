@@ -7,6 +7,8 @@ import android.view.View
 import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doAfterTextChanged
 import com.dimaf.calc.databinding.ActivityMainBinding
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding

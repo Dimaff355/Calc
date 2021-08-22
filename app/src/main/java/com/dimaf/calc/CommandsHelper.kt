@@ -2,6 +2,7 @@ package com.dimaf.calc
 
 import android.widget.Toast
 import java.math.BigDecimal
+import java.math.RoundingMode
 
 class CommandsHelper (act : MainActivity) {
     val act = act
@@ -75,44 +76,24 @@ class CommandsHelper (act : MainActivity) {
     }
 
     fun calculate (numberLast : BigDecimal, currentNum : BigDecimal, operation : Int) : BigDecimal {
-        val tempNum = numberWithZero(numberLast)
-        val currentNumber = numberWithZero(currentNum)
         if (tempOperation != Consts.DEFAULT_OPERATION) {
             return when (operation) {
-                Consts.PLUS -> roundNumber(tempNum + currentNumber)
-                Consts.MINUS -> roundNumber(tempNum - currentNumber)
+                Consts.PLUS -> numberLast + currentNum
+                Consts.MINUS -> numberLast - currentNum
                 Consts.DIVIDE -> try {
-                    return roundNumber(tempNum / currentNumber)
+                    return numberLast.divide(currentNum, 10, RoundingMode.HALF_UP).stripTrailingZeros()
                 } catch (e : ArithmeticException) {
                     Toast.makeText(act, "На ноль делить нельзя!", Toast.LENGTH_LONG).show()
                     tvText(Consts.RESET)
                     return BigDecimal(0)
                 }
-                Consts.MULTIPLY -> roundNumber(tempNum * currentNumber)
+                Consts.MULTIPLY -> numberLast * currentNum
                 else -> BigDecimal(0)
             }
         } else {return  BigDecimal(0)}
     }
 
-    fun numberWithZero (number: BigDecimal) : BigDecimal {
-        // этот метод нужен чтобы добавить "0" в конец числа, иначе Bigdecimal считаются как Int
-        if (number.toString().contains('.')) {
-            return number
-        }
-        else {
-            val numberAfterNormalization = (number.toString() + ".0").toBigDecimal()
-            return numberAfterNormalization
-        }
-    }
 
-    fun roundNumber(number: BigDecimal) : BigDecimal {
-        if (number.toString().endsWith(".0") || number.toString().endsWith(".00") ) {
-            return number.toInt().toBigDecimal()
-        }
-        else {
-            return number
-        }
-    }
 
     fun percent() : String{
         if (isNoValue()) return "0"
@@ -121,7 +102,8 @@ class CommandsHelper (act : MainActivity) {
             return "0"
         }
         tempNumber = text.toBigDecimal()
-        val percentValue = roundNumber ((numberWithZero(result) / BigDecimal(100.0)) * numberWithZero(tempNumber))
+        val percentValue = ((result.divide(BigDecimal(100), 10, RoundingMode.HALF_UP)  ) * tempNumber)
+            .stripTrailingZeros()
         tempNumber = percentValue
         text = tempNumber.toString()
         return tempNumber.toString()
@@ -130,6 +112,7 @@ class CommandsHelper (act : MainActivity) {
     fun isNoValue() : Boolean {
         return text == ""
     }
+
 
 
 
