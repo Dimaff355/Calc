@@ -32,6 +32,7 @@ class CommandsHelper (act : MainActivity) {
 
 
     fun onClickOperation(operation: Int) : String {
+        if (isNoValue()) return "0"
         if (tempOperation == Consts.DEFAULT_OPERATION) {
             tempOperation = operation
             result = text.toBigDecimal()
@@ -47,6 +48,7 @@ class CommandsHelper (act : MainActivity) {
 
     // для "равно"
     fun onClickEquals() : String {
+        if (isNoValue()) return "0"
         if (tempOperation == Consts.DEFAULT_OPERATION) {
             return text
         }
@@ -113,6 +115,8 @@ class CommandsHelper (act : MainActivity) {
     }
 
     fun percent() : String{
+        if (isNoValue()) return "0"
+
         if (tempOperation == Consts.DEFAULT_OPERATION) {
             return "0"
         }
@@ -123,6 +127,9 @@ class CommandsHelper (act : MainActivity) {
         return tempNumber.toString()
     }
 
+    fun isNoValue() : Boolean {
+        return text == ""
+    }
 
 
 
