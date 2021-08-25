@@ -110,7 +110,7 @@ class CommandsHelper (act : MainActivity) {
     }
 
     fun isNoValue() : Boolean {
-        return text == ""
+        return text == "" || text.startsWith('.')
     }
 
 

@@ -6,6 +6,8 @@ import android.util.Log
 import android.view.View
 import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doAfterTextChanged
+import androidx.core.widget.doBeforeTextChanged
+import androidx.core.widget.doOnTextChanged
 import com.dimaf.calc.databinding.ActivityMainBinding
 import java.math.BigDecimal
 import java.math.RoundingMode
@@ -64,9 +66,7 @@ class MainActivity : AppCompatActivity() {
             buttonMultiply.setOnClickListener { tv.text = commandsHelper.onClickOperation(Consts.MULTIPLY) }
             buttonPercent.setOnClickListener { tv.text = commandsHelper.percent() }
 
-            tv.doAfterTextChanged {
-                scrollView.smoothScrollTo(0, 100000)
-            }
+            tv.doAfterTextChanged {  scrollView.smoothScrollTo(0, 100000) }
 
         }
 
